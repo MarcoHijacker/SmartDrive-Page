@@ -28,7 +28,7 @@ La sicurezza stradale e l'efficienza nella guida dei veicoli sono temi di cresce
 ### Raccolta dati
 
 - **Sensori utilizzati**: Accelerometro, giroscopio e GPS dello smartphone.
-- **App di acquisizione**: Utilizzo dell'app _Sensor Logger_ per raccogliere dati in tempo reale e inviarli al back-end.
+- **App di acquisizione**: Utilizzo dell'app _Sensor Logger_ per raccogliere dati in tempo reale ed inviarli al back-end.
 
 ### Analisi dei dati
 
@@ -54,26 +54,26 @@ Ogni utente registrato può creare delle sessioni di guida. Una volta alla guida
 
 <a href="https://raw.githubusercontent.com/MarcoHijacker/SmartDrive-Page/main/assets/images/dashboard_user.png" target="_blank">![Dashboard User](https://raw.githubusercontent.com/MarcoHijacker/SmartDrive-Page/main/assets/images/dashboard_user.png)</a>
 
-- **Grafici di sessione**: La sezione relativa alle statistiche di sessione mostra svariati grafici per stimare l'andamento puntuale di: accelerazione, velocità, rollìo, beccheggio. Per ogni campione sul grafico è possibile analizzare lo stile di guida istantaneo ad esso associato. Infine è presente una mappa che traccia il percorso effettuato dal guidatore per la sessione in corso.
+- **Grafici di sessione**: La sezione relativa alle statistiche di sessione mostra svariati grafici per stimare l'andamento puntuale di: _accelerazione_, _velocità_, _rollìo_ e _beccheggio_. Per ogni campione sul grafico è possibile analizzare lo stile di guida istantaneo ad esso associato. Infine è presente una _mappa di geolocalizzazione_ che traccia il percorso effettuato dal guidatore per la sessione in corso.
 
 <a href="https://raw.githubusercontent.com/MarcoHijacker/SmartDrive-Page/main/assets/images/acceleration_speed.png" target="_blank">![Acceleration Speed](https://raw.githubusercontent.com/MarcoHijacker/SmartDrive-Page/main/assets/images/acceleration_speed.png)</a>
 
 <a href="https://raw.githubusercontent.com/MarcoHijacker/SmartDrive-Page/main/assets/images/pitch_roll.png" target="_blank">![Pitch Roll](https://raw.githubusercontent.com/MarcoHijacker/SmartDrive-Page/main/assets/images/pitch_roll.png)</a>
 
-<a href="https://raw.githubusercontent.com/MarcoHijacker/SmartDrive-Page/main/assets/images/map_path.png" target="_blank">![Pitch Roll](https://raw.githubusercontent.com/MarcoHijacker/SmartDrive-Page/main/assets/images/map_path.png)</a>
+<a href="https://raw.githubusercontent.com/MarcoHijacker/SmartDrive-Page/main/assets/images/map_path.png" target="_blank">![Map Path](https://raw.githubusercontent.com/MarcoHijacker/SmartDrive-Page/main/assets/images/map_path.png)</a>
 
-### Upload collections
+### Gestione delle collezioni
 
-Viene fornita una sezione in cui l'utente può caricare con facilità collezioni di dati relative a campioni, sessioni e test. I formati accettati sono JSON e CSV.
+Nella sezione _Database_ l'utente può caricare con facilità collezioni di dati relative a campioni, sessioni e test. I formati accettati sono **JSON** e **CSV**.
 
-<a href="https://raw.githubusercontent.com/MarcoHijacker/SmartDrive-Page/main/assets/images/database_upload.png" target="_blank">![Pitch Roll](https://raw.githubusercontent.com/MarcoHijacker/SmartDrive-Page/main/assets/images/database_upload.png)</a>
+<a href="https://raw.githubusercontent.com/MarcoHijacker/SmartDrive-Page/main/assets/images/database_upload.png" target="_blank">![Database Upload](https://raw.githubusercontent.com/MarcoHijacker/SmartDrive-Page/main/assets/images/database_upload.png)</a>
 
 ### Processo di validazione
 
-1. **Acquisizione dei dati**: Raccolta di oltre 1.800 campioni di dati di guida utilizzando _Sensor Logger_.
-2. **Sviluppo del modello**: Addestramento del modello Random Forest con i dati raccolti, ottenendo un'accuratezza del 98.82%.
+1. **Acquisizione dei dati**: Raccolta di oltre _1.800 campioni_ di dati di guida utilizzando _Sensor Logger_.
+2. **Sviluppo del modello**: Addestramento del modello _Random Forest_ con i dati raccolti, ottenendo un'accuratezza del 98.82%.
 3. **Analisi dei campioni**: Test su strada per verificare l'affidabilità del sistema nel distinguere diversi stili di guida.
-4. **Implementazione delle API**: Creazione di REST API per l'interazione tra front-end e back-end.
+4. **Implementazione delle API**: Creazione di _REST API_ per l'interazione tra front-end e back-end.
 
 <a href="https://raw.githubusercontent.com/MarcoHijacker/SmartDrive-Page/main/assets/images/postman_collection.png" target="_blank">![Postman Collection](https://raw.githubusercontent.com/MarcoHijacker/SmartDrive-Page/main/assets/images/postman_collection.png)</a>
 
@@ -83,32 +83,32 @@ Viene fornita una sezione in cui l'utente può caricare con facilità collezioni
 - **Espansione a contesti professionali**: Applicazione per aziende di trasporto e conducenti di veicoli pesanti.
 - **Tecniche avanzate di ML**: Adattamento a diversi tipi di veicoli e utilizzo di reti neurali profonde.
 
-### Hands on!
+### Deploy locale
 
-7 semplici step sono sufficienti per il deploy dell'APP in locale (Node.js e Python richiesti):
+7 semplici step sono sufficienti per il deploy dell'APP in locale (**Node.js e Python richiesti**):
 
-1. Scarica la repo di <a href="https://github.com/UniSalento-IDALab-IoTCourse-2023-2024/WoT-SmartDrive-2023-2024-BackEnd-Longo-Tarantino" target="_blank"><strong>Back-end</strong></a>
-2. Assicurati di possedere Python sul tuo sistema, quindi:
+1. Scaricare la repo del <a href="https://github.com/UniSalento-IDALab-IoTCourse-2023-2024/WoT-SmartDrive-2023-2024-BackEnd-Longo-Tarantino" target="_blank"><strong>back-end</strong></a>
+2. Ripristinare le librerie di Python necessarie con:
 ```bash
 pip install -r requirements.txt
 ```
-3. Ricrea il database dimostrativo con le collezioni presenti nella cartella database:
+3. Ricreare il database dimostrativo con le collezioni presenti in repo:
 ```bash
 mongoimport --db SmartDrive --collection user --file database/SmartDrive.user_final.json --jsonArray
 mongoimport --db SmartDrive --collection test --file database/SmartDrive.test_final.json --jsonArray
 mongoimport --db SmartDrive --collection samples --file database/SmartDrive.samples_final.json --jsonArray
 mongoimport --db SmartDrive --collection session --file database/SmartDrive.session_final.json --jsonArray
 ```
-4. Avvia il back-end (esposto su localhost:8000) con:
+4. Avviare il back-end (esposto su **localhost:8000**) con:
 ```bash
 python Server.py
 ```
-5. Scarica la repo di <a href="https://github.com/UniSalento-IDALab-IoTCourse-2023-2024/WoT-SmartDrive-2023-2024-FrontEnd-Longo-Tarantino" target="_blank"><strong>Front-end</strong></a>
-6. Ripristina le dipendenze di Node:
+5. Scarica la repo del <a href="https://github.com/UniSalento-IDALab-IoTCourse-2023-2024/WoT-SmartDrive-2023-2024-FrontEnd-Longo-Tarantino" target="_blank"><strong>front-end</strong></a>
+6. Ripristinare le dipendenze di Node necessarie con:
 ```bash
 npm install
 ```
-7. Avvia il pannello front-end (esposto su localhost:5173) con:
+7. Avviare il pannello front-end (esposto su **localhost:5173**) con:
 ```bash
 npm start
 ```
