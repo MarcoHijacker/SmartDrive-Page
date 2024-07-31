@@ -46,7 +46,7 @@ Ogni utente registrato può creare delle sessioni di guida. Una volta alla guida
 
 - **Statistiche generali**: La sezione principale della dashboard mostra le statistiche medie di guida dell'utente relativamente a tutte le sessioni.
 
-<a href="https://raw.githubusercontent.com/MarcoHijacker/SmartDrive-Page/main/assets/images/dashboard_full.png" target="_blank">![_full Example](https://raw.githubusercontent.com/MarcoHijacker/SmartDrive-Page/main/assets/images/dashboard_full.png)</a>
+<a href="https://raw.githubusercontent.com/MarcoHijacker/SmartDrive-Page/main/assets/images/dashboard_user.png" target="_blank">![Dashboard User](https://raw.githubusercontent.com/MarcoHijacker/SmartDrive-Page/main/assets/images/dashboard_user.png)</a>
 
 - **Grafici di sessione**: La sezione relativa alle statistiche di sessione mostra svariati grafici per stimare l'andamento puntuale di: accelerazione, velocità, rollìo, beccheggio. Per ogni campione sul grafico è possibile analizzare lo stile di guida istantaneo ad esso associato. Infine è presente una mappa che traccia il percorso effettuato dal guidatore per la sessione in corso.
 
