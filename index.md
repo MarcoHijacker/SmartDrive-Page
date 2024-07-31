@@ -8,7 +8,7 @@ La sicurezza stradale e l'efficienza nella guida dei veicoli sono temi di cresce
 
 ### Obiettivi dell'applicativo
 
-SmartDrive si pone l'obiettivo di sviluppare un sistema integrato per l'acquisizione, l'analisi e la visualizzazione dei dati di guida, al fine di stimare lo stile di guida del conducente e migliorare la sicurezza e l'efficienza.
+**SmartDrive** si pone l'obiettivo di sviluppare un sistema integrato per l'acquisizione, l'analisi e la visualizzazione dei dati di guida, al fine di stimare lo stile di guida del conducente e migliorare la sicurezza e l'efficienza.
 
 ### Project Team
 
@@ -46,7 +46,7 @@ Ogni utente registrato può creare delle sessioni di guida. Una volta alla guida
 
 - **Statistiche Generali**: La sezione principale della dashboard mostra le statistiche medie di guida dell'utente relativamente a tutte le sessioni.
 
-![Dashboard Example](https://raw.githubusercontent.com/MarcoHijacker/SmartDrive-Page/main/assets/images/dashboard_overview.png)
+<a href="https://raw.githubusercontent.com/MarcoHijacker/SmartDrive-Page/main/assets/images/dashboard_overview.png" target="_blank">![Dashboard Example](https://raw.githubusercontent.com/MarcoHijacker/SmartDrive-Page/main/assets/images/dashboard_overview.png)</a>
 
 - **Grafici di Sessione**: La sezione relativa alle statistiche di sessione mostra svariati grafici per stimare l'andamento puntuale di: accelerazione, velocità, rollìo, beccheggio. Per ogni campione sul grafico è possibile analizzare lo stile di guida istantaneo ad esso associato. Infine è presente una mappa che traccia il percorso effettuato dal guidatore per la sessione in corso.
 
