@@ -64,6 +64,8 @@ Ogni utente registrato può creare delle sessioni di guida. Una volta alla guida
 4. **Implementazione delle API**: Creazione di REST API per l'interazione tra front-end e back-end.
 5. **Validazione**: Test su strada per verificare l'affidabilità del sistema nel distinguere diversi stili di guida.
 
+<a href="https://raw.githubusercontent.com/MarcoHijacker/SmartDrive-Page/main/assets/images/postman_collection.png" target="_blank">![Postman Collection](https://raw.githubusercontent.com/MarcoHijacker/SmartDrive-Page/main/assets/images/postman_collection.png)</a>
+
 ### Sviluppi Futuri
 
 - **Integrazione di Nuovi Dati**: Consumo di carburante, usura dei freni e condizioni ambientali.
