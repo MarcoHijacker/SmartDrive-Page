@@ -10,47 +10,47 @@ La sicurezza stradale e l'efficienza nella guida dei veicoli sono temi di cresce
 
 **SmartDrive** si pone l'obiettivo di sviluppare un sistema integrato per l'acquisizione, l'analisi e la visualizzazione dei dati di guida, al fine di stimare lo stile di guida del conducente e migliorare la sicurezza e l'efficienza.
 
-### Project Team
+### Project team
 
 | Matricola          | Cognome            | Nome               | E-mail                                                                                    |
 |:-------------------|:-------------------|:-------------------|:------------------------------------------------------------------------------------------|
 | 20090064           | Longo              | Marco              | [marco.longo@studenti.unisalento.it](mailto:marco.longo@studenti.unisalento.it)           |
 | 20094004           | Tarantino          | Priamo             | [priamo.tarantino@studenti.unisalento.it](mailto:priamo.tarantino@studenti.unisalento.it) |
 
-### Architettura del Sistema
+### Architettura del sistema
 
 - **Back-end**: Realizzato in _Python_ con l'ausilio del framework _Flask_.
 - **Front-end**: Sviluppato con _Vue.js_, con l'ausilio di _Chart.js_ per visualizzare i dati su grafici professionali.
 - **Database**: Database NoSQL (_MongoDB_) per lo storage dei dati.
 
-## Raccolta Dati
+### Raccolta dati
 
-- **Sensori Utilizzati**: Accelerometro, giroscopio e GPS dello smartphone.
-- **App di Acquisizione**: Utilizzo dell'app _Sensor Logger_ per raccogliere dati in tempo reale e inviarli al back-end.
+- **Sensori utilizzati**: Accelerometro, giroscopio e GPS dello smartphone.
+- **App di acquisizione**: Utilizzo dell'app _Sensor Logger_ per raccogliere dati in tempo reale e inviarli al back-end.
 
-## Analisi dei Dati
+### Analisi dei dati
 
 - **Modello di Machine Learning**: Utilizzo del modello _Random Forest_ per classificare lo stile di guida in 4 categorie (prudente, normale, sportivo, aggressivo).
-- **Preparazione dei Dati**: Pulizia, normalizzazione ed ingegneria delle features per migliorare la precisione del modello.
+- **Preparazione dei dati**: Pulizia, normalizzazione ed ingegneria delle features per migliorare la precisione del modello.
 
-## Accessibilità della WebApp
+### Accessibilità della WebApp
 
 - **Registrazione**: La fase di registrazione richiede all'utente: nome, cognome, e-mail, password ed il _Device ID_ del dispositivo in uso (recuperabile nel menù impostazioni dell'app _Sensor Logger_). Hashing delle password degli utenti con _SHA-256_.
 - **Login**: Procedura di accesso sicuro tramite autenticazione _JWT_.
 
-## Sessioni di Guida
+### Sessioni di guida
 
 Ogni utente registrato può creare delle sessioni di guida. Una volta alla guida (con l'app _Sensor Logger_ avviata), il back-end recepirà i campioni (raccolti con cadenza di 1 secondo) e li salverà sul DB associandoli alla sessione attiva dell'utente.
 
-## Visualizzazione dei Risultati
+### Visualizzazione dei risultati
 
-- **Statistiche Generali**: La sezione principale della dashboard mostra le statistiche medie di guida dell'utente relativamente a tutte le sessioni.
+- **Statistiche generali**: La sezione principale della dashboard mostra le statistiche medie di guida dell'utente relativamente a tutte le sessioni.
 
-<a href="https://raw.githubusercontent.com/MarcoHijacker/SmartDrive-Page/main/assets/images/dashboard.png" target="_blank">![Dashboard Example](https://raw.githubusercontent.com/MarcoHijacker/SmartDrive-Page/main/assets/images/dashboard_overview.png)</a>
+<a href="https://raw.githubusercontent.com/MarcoHijacker/SmartDrive-Page/main/assets/images/dashboard.png" target="_blank">![Dashboard Example](https://raw.githubusercontent.com/MarcoHijacker/SmartDrive-Page/main/assets/images/dashboard.png)</a>
 
-- **Grafici di Sessione**: La sezione relativa alle statistiche di sessione mostra svariati grafici per stimare l'andamento puntuale di: accelerazione, velocità, rollìo, beccheggio. Per ogni campione sul grafico è possibile analizzare lo stile di guida istantaneo ad esso associato. Infine è presente una mappa che traccia il percorso effettuato dal guidatore per la sessione in corso.
+- **Grafici di sessione**: La sezione relativa alle statistiche di sessione mostra svariati grafici per stimare l'andamento puntuale di: accelerazione, velocità, rollìo, beccheggio. Per ogni campione sul grafico è possibile analizzare lo stile di guida istantaneo ad esso associato. Infine è presente una mappa che traccia il percorso effettuato dal guidatore per la sessione in corso.
 
-# Fasi Salienti del Progetto
+### Fasi Salienti del Progetto
 
 1. **Acquisizione dei Dati**: Raccolta di oltre 1800 campioni di dati di guida utilizzando Sensor Logger.
 2. **Progettazione del Database**: Strutturazione del database con collezioni per campioni, sessioni, test e utenti.
@@ -58,7 +58,7 @@ Ogni utente registrato può creare delle sessioni di guida. Una volta alla guida
 4. **Implementazione delle API**: Creazione di REST API per l'interazione tra front-end e back-end.
 5. **Validazione**: Test su strada per verificare l'affidabilità del sistema nel distinguere diversi stili di guida.
 
-# Sviluppi Futuri
+### Sviluppi Futuri
 
 - **Integrazione di Nuovi Dati**: Consumo di carburante, usura dei freni e condizioni ambientali.
 - **Espansione a Contesti Professionali**: Applicazione per aziende di trasporto e conducenti di veicoli pesanti.
