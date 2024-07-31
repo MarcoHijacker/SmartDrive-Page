@@ -21,7 +21,7 @@ La sicurezza stradale e l'efficienza nella guida dei veicoli sono temi di cresce
 
 - **Back-end**: Realizzato in _Python_ con l'ausilio del framework _Flask_.
 - **Front-end**: Sviluppato con _Vue.js_, con l'ausilio di _Chart.js_ per visualizzare i dati su grafici professionali.
-- **Database**: Database NoSQL (_MongoDB_) per lo storage dei dati.
+- **Database**: Database NoSQL (_MongoDB_) per lo storage dei dati, strutturato con 4 collezioni: campioni, sessioni, test ed utenti.
 
 <a href="https://raw.githubusercontent.com/MarcoHijacker/SmartDrive-Page/main/assets/images/smartdrive_schema.png" target="_blank">![SmartDrive Schema](https://raw.githubusercontent.com/MarcoHijacker/SmartDrive-Page/main/assets/images/smartdrive_schema.png)</a>
 
@@ -56,146 +56,59 @@ Ogni utente registrato può creare delle sessioni di guida. Una volta alla guida
 
 - **Grafici di sessione**: La sezione relativa alle statistiche di sessione mostra svariati grafici per stimare l'andamento puntuale di: accelerazione, velocità, rollìo, beccheggio. Per ogni campione sul grafico è possibile analizzare lo stile di guida istantaneo ad esso associato. Infine è presente una mappa che traccia il percorso effettuato dal guidatore per la sessione in corso.
 
-### Fasi Salienti del Progetto
+<a href="https://raw.githubusercontent.com/MarcoHijacker/SmartDrive-Page/main/assets/images/acceleration_speed.png" target="_blank">![Acceleration Speed](https://raw.githubusercontent.com/MarcoHijacker/SmartDrive-Page/main/assets/images/acceleration_speed.png)</a>
 
-1. **Acquisizione dei Dati**: Raccolta di oltre 1800 campioni di dati di guida utilizzando Sensor Logger.
-2. **Progettazione del Database**: Strutturazione del database con collezioni per campioni, sessioni, test e utenti.
-3. **Sviluppo del Modello**: Addestramento del modello Random Forest con i dati raccolti, ottenendo un'accuratezza del 98.82%.
+<a href="https://raw.githubusercontent.com/MarcoHijacker/SmartDrive-Page/main/assets/images/pitch_roll.png" target="_blank">![Pitch Roll](https://raw.githubusercontent.com/MarcoHijacker/SmartDrive-Page/main/assets/images/pitch_roll.png)</a>
+
+<a href="https://raw.githubusercontent.com/MarcoHijacker/SmartDrive-Page/main/assets/images/map_path.png" target="_blank">![Pitch Roll](https://raw.githubusercontent.com/MarcoHijacker/SmartDrive-Page/main/assets/images/map_path.png)</a>
+
+### Upload collections
+
+Viene fornita una sezione in cui l'utente può caricare con facilità collezioni di dati relative a campioni, sessioni e test. I formati accettati sono JSON e CSV.
+
+<a href="https://raw.githubusercontent.com/MarcoHijacker/SmartDrive-Page/main/assets/images/database_upload.png" target="_blank">![Pitch Roll](https://raw.githubusercontent.com/MarcoHijacker/SmartDrive-Page/main/assets/images/database_upload.png)</a>
+
+### Processo di validazione
+
+1. **Acquisizione dei dati**: Raccolta di oltre 1.800 campioni di dati di guida utilizzando _Sensor Logger_.
+2. **Sviluppo del modello**: Addestramento del modello Random Forest con i dati raccolti, ottenendo un'accuratezza del 98.82%.
+3. **Analisi dei campioni**: Test su strada per verificare l'affidabilità del sistema nel distinguere diversi stili di guida.
 4. **Implementazione delle API**: Creazione di REST API per l'interazione tra front-end e back-end.
-5. **Validazione**: Test su strada per verificare l'affidabilità del sistema nel distinguere diversi stili di guida.
 
 <a href="https://raw.githubusercontent.com/MarcoHijacker/SmartDrive-Page/main/assets/images/postman_collection.png" target="_blank">![Postman Collection](https://raw.githubusercontent.com/MarcoHijacker/SmartDrive-Page/main/assets/images/postman_collection.png)</a>
 
-### Sviluppi Futuri
+### Sviluppi futuri
 
-- **Integrazione di Nuovi Dati**: Consumo di carburante, usura dei freni e condizioni ambientali.
-- **Espansione a Contesti Professionali**: Applicazione per aziende di trasporto e conducenti di veicoli pesanti.
-- **Tecniche Avanzate di ML**: Adattamento a diversi tipi di veicoli e utilizzo di reti neurali profonde.
+- **Integrazione di nuove specifiche**: Consumo di carburante, usura dei freni e condizioni ambientali.
+- **Espansione a contesti professionali**: Applicazione per aziende di trasporto e conducenti di veicoli pesanti.
+- **Tecniche avanzate di ML**: Adattamento a diversi tipi di veicoli e utilizzo di reti neurali profonde.
 
----
+### Hands on!
 
-Questo progetto offre un sistema completo per monitorare e migliorare lo stile di guida, fornendo uno strumento utile per aumentare la sicurezza stradale e l'efficienza dei veicoli.
+7 semplici step sono sufficienti per il deploy dell'APP in locale (Node.js e Python richiesti):
 
-# Header 1
-
-This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
-
-Text can be **bold**, _italic_, or ~~strikethrough~~.
-
-[Link to another page](./another-page.html).
-
-There should be whitespace between paragraphs.
-
-There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
-
-# Header 1
-
-This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
-
-## Header 2
-
-> This is a blockquote following a header.
->
-> When something is important enough, you do it even if the odds are not in your favor.
-
-### Header 3
-
-```js
-// Javascript code with syntax highlighting.
-var fun = function lang(l) {
-  dateformat.i18n = require('./lang/' + l)
-  return true;
-}
+1. Scarica la repo di <a href="https://github.com/UniSalento-IDALab-IoTCourse-2023-2024/WoT-SmartDrive-2023-2024-BackEnd-Longo-Tarantino" target="_blank"><strong>Back-end</strong></a>
+2. Assicurati di possedere Python sul tuo sistema, quindi:
+```bash
+pip install -r requirements.txt
 ```
-
-```ruby
-# Ruby code with syntax highlighting
-GitHubPages::Dependencies.gems.each do |gem, version|
-  s.add_dependency(gem, "= #{version}")
-end
+3. Ricrea il database dimostrativo con le collezioni presenti nella cartella database:
+```bash
+mongoimport --db SmartDrive --collection user --file database/SmartDrive.user_final.json --jsonArray
+mongoimport --db SmartDrive --collection test --file database/SmartDrive.test_final.json --jsonArray
+mongoimport --db SmartDrive --collection samples --file database/SmartDrive.samples_final.json --jsonArray
+mongoimport --db SmartDrive --collection session --file database/SmartDrive.session_final.json --jsonArray
 ```
-
-#### Header 4
-
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-
-##### Header 5
-
-1.  This is an ordered list following a header.
-2.  This is an ordered list following a header.
-3.  This is an ordered list following a header.
-
-###### Header 6
-
-| head1        | head two          | three |
-|:-------------|:------------------|:------|
-| ok           | good swedish fish | nice  |
-| out of stock | good and plenty   | nice  |
-| ok           | good `oreos`      | hmm   |
-| ok           | good `zoute` drop | yumm  |
-
-### There's a horizontal rule below this.
-
-* * *
-
-### Here is an unordered list:
-
-*   Item foo
-*   Item bar
-*   Item baz
-*   Item zip
-
-### And an ordered list:
-
-1.  Item one
-1.  Item two
-1.  Item three
-1.  Item four
-
-### And a nested list:
-
-- level 1 item
-  - level 2 item
-  - level 2 item
-    - level 3 item
-    - level 3 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-
-### Small image
-
-![Octocat](https://github.githubassets.com/images/icons/emoji/octocat.png)
-
-### Large image
-
-![Branching](https://guides.github.com/activities/hello-world/branching.png)
-
-
-### Definition lists can be used with HTML syntax.
-
-<dl>
-<dt>Name</dt>
-<dd>Godzilla</dd>
-<dt>Born</dt>
-<dd>1952</dd>
-<dt>Birthplace</dt>
-<dd>Japan</dd>
-<dt>Color</dt>
-<dd>Green</dd>
-</dl>
-
+4. Avvia il back-end (esposto su localhost:8000) con:
+```bash
+python Server.py
 ```
-Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
+5. Scarica la repo di <a href="https://github.com/UniSalento-IDALab-IoTCourse-2023-2024/WoT-SmartDrive-2023-2024-FrontEnd-Longo-Tarantino" target="_blank"><strong>Front-end</strong></a>
+6. Ripristina le dipendenze di Node:
+```bash
+npm install
 ```
-
-```
-The final element.
+7. Avvia il pannello front-end (esposto su localhost:5173) con:
+```bash
+npm start
 ```
