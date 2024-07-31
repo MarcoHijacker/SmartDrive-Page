@@ -40,6 +40,8 @@ La sicurezza stradale e l'efficienza nella guida dei veicoli sono temi di cresce
 - **Registrazione**: La fase di registrazione richiede all'utente: nome, cognome, e-mail, password ed il _Device ID_ del dispositivo in uso (recuperabile nel menù impostazioni dell'app _Sensor Logger_). Hashing delle password degli utenti con _SHA-256_.
 - **Login**: Procedura di accesso sicuro tramite autenticazione _JWT_.
 
+<a href="https://raw.githubusercontent.com/MarcoHijacker/SmartDrive-Page/main/assets/images/login_page.png" target="_blank">![Login Page](https://raw.githubusercontent.com/MarcoHijacker/SmartDrive-Page/main/assets/images/login_page.png)</a>
+
 ### Sessioni di guida
 
 Ogni utente registrato può creare delle sessioni di guida. Una volta alla guida (con l'app _Sensor Logger_ avviata), il back-end recepirà i campioni (raccolti con cadenza di 1 secondo) e li salverà sul DB associandoli alla sessione attiva dell'utente.
