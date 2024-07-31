@@ -42,6 +42,8 @@ La sicurezza stradale e l'efficienza nella guida dei veicoli sono temi di cresce
 
 Ogni utente registrato può creare delle sessioni di guida. Una volta alla guida (con l'app _Sensor Logger_ avviata), il back-end recepirà i campioni (raccolti con cadenza di 1 secondo) e li salverà sul DB associandoli alla sessione attiva dell'utente.
 
+<a href="https://raw.githubusercontent.com/MarcoHijacker/SmartDrive-Page/main/assets/images/sessions_crud.png" target="_blank">![Sessions CRUD](https://raw.githubusercontent.com/MarcoHijacker/SmartDrive-Page/main/assets/images/sessions_crud.png)</a>
+
 ### Visualizzazione dei risultati
 
 - **Statistiche generali**: La sezione principale della dashboard mostra le statistiche medie di guida dell'utente relativamente a tutte le sessioni.
