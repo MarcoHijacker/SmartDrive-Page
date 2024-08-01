@@ -39,8 +39,11 @@ La sicurezza stradale e l'efficienza nella guida dei veicoli sono temi di cresce
 
 - **Registrazione**: La fase di registrazione richiede all'utente: nome, cognome, e-mail, password ed il _Device ID_ del dispositivo in uso (recuperabile nel menù impostazioni dell'app _Sensor Logger_). Hashing delle password degli utenti con _SHA-256_.
 - **Login**: Procedura di accesso sicuro tramite autenticazione _JWT_.
+- **Area utente**: Gestione del profilo dell'utente. 
 
 <a href="https://raw.githubusercontent.com/MarcoHijacker/SmartDrive-Page/main/assets/images/login_page.png" target="_blank">![Login Page](https://raw.githubusercontent.com/MarcoHijacker/SmartDrive-Page/main/assets/images/login_page.png)</a>
+
+<a href="https://raw.githubusercontent.com/MarcoHijacker/SmartDrive-Page/main/assets/images/user_area.png" target="_blank">![User Area](https://raw.githubusercontent.com/MarcoHijacker/SmartDrive-Page/main/assets/images/user_area.png)</a>
 
 ### Sessioni di guida
 
@@ -64,7 +67,7 @@ Ogni utente registrato può creare delle sessioni di guida. Una volta alla guida
 
 ### Gestione delle collezioni
 
-Nella sezione _Database_ l'utente può caricare con facilità collezioni di dati relative a campioni, sessioni e test. I formati accettati sono **JSON** e **CSV**.
+Nella sezione _Database_ l'utente può caricare con facilità collezioni di dati relative a campioni, sessioni e test. I formati accettati sono <u>.json</u> e <u>.csv</u>.
 
 <a href="https://raw.githubusercontent.com/MarcoHijacker/SmartDrive-Page/main/assets/images/database_upload.png" target="_blank">![Database Upload](https://raw.githubusercontent.com/MarcoHijacker/SmartDrive-Page/main/assets/images/database_upload.png)</a>
 
@@ -99,7 +102,7 @@ mongoimport --db SmartDrive --collection test --file database/SmartDrive.test_fi
 mongoimport --db SmartDrive --collection samples --file database/SmartDrive.samples_final.json --jsonArray
 mongoimport --db SmartDrive --collection session --file database/SmartDrive.session_final.json --jsonArray
 ```
-4. Avviare il back-end (esposto su **localhost:8000**) con:
+4. Avviare il back-end (esposto su <u>localhost:8000</u>) con:
 ```bash
 python Server.py
 ```
@@ -108,7 +111,7 @@ python Server.py
 ```bash
 npm install
 ```
-7. Avviare il pannello front-end (esposto su **localhost:5173**) con:
+7. Avviare il pannello front-end (esposto su <u>localhost:5173</u>) con:
 ```bash
 npm start
 ```
